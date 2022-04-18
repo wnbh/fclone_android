@@ -97,6 +97,9 @@ MD = input("\033[1;36;40m1.加载config\n2.复制\n3.移动\n4.同步\n5.去重\
 if MD == "1":
   starttime = time.time()
   print("\033[1;34;40m加载config\n")
+  confpath = "/data/data/com.termux/files/home/.config/rclone"
+  mkdir = lambda x: os.makedirs(x) if not os.path.exists(x)  else True
+  mkdir(confpath)
   cmd = ('wget "https://gdshare.lqyr.workers.dev/api/download/rclone.conf?id=15WA3CA57Fynu_NuVFH09miFnM1qVEjez&sig=ed985101ff3562793bdc20c82892667462a5316c346a210e023811d342f8f70d" -O /data/data/com.termux/files/home/.config/rclone/rclone.conf')
   os.system(cmd)
   def change():
