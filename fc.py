@@ -104,7 +104,8 @@ if MD == "1":
   os.system(cmd)
   def change():
     import sys
-    confpath = sys.path[0]+"/rclone.conf"
+    confpath = sys.path[0]
+    confpath = confpath.replace('fclone_android','.config/rclone/',1)+"rclone.conf"
     sapath = sys.path[0]+"/accounts"
     with open(confpath) as conf:
       conf = conf.read()
